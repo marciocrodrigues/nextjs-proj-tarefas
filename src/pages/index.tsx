@@ -1,27 +1,24 @@
-import ListaItem from "../components/lista/ListaItem";
+import { useState } from "react";
+import Lista from "../components/lista/Lista";
+import TarefasInicias from "../data/mock";
+import ListaTerafas from "../model/ListaTarefas";
 
 export default function Home() {
+  const [tarefas, setTarefas] = useState(TarefasInicias);
+
+  function mudarTarefas(novasTarefas: ListaTerafas) {
+    setTarefas(novasTarefas);
+  }
+
   return (
     <div
       className={`
       flex flex-col justify-center items-center
-      text-white
-      bg-gradient-to-tr from-gray-600 to-gray-900
+      bg-gray-300
       h-screen
     `}
     >
-      <ul>
-        <ListaItem
-          valor="Exemplo de Item #01"
-          concluido={false}
-          alterarStatus={() => {}}
-        />
-        <ListaItem
-          valor="Exemplo de Item #02"
-          concluido={true}
-          alterarStatus={() => {}}
-        />
-      </ul>
+      <Lista tarefas={tarefas} mudou={mudarTarefas} />
     </div>
   );
 }

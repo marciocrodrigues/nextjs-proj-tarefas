@@ -14,7 +14,7 @@ export default function ListaItem(props: ListaItemProps) {
   return (
     <li
       className={`
-        bg-white text-black
+        text-black
         flex items-center p-5 text-xl
         border-b border-gray-400 cursor-pointer
         `}
