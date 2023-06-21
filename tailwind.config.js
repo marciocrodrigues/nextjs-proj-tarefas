@@ -7,10 +7,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: (theme) => ({
+      backgroundImage: {
         // prettier-ignore
-        "tarefas": "url('/images/background/jpeg')",
-      }),
+        'tarefas': "url('/images/background.jpeg')",
+      },
     },
   },
   plugins: [],
